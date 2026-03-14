@@ -653,7 +653,7 @@ class AppWindow {
         };
       case 4:
         return {
-            {L"Online Manual", L"", kMenuHelpManual},
+            {L"Visit GitHub", L"", kMenuHelpManual},
             {.separator = true},
             {L"About", L"", kMenuHelpAbout},
         };
@@ -876,7 +876,7 @@ class AppWindow {
         ShowPlaceholderPopup(L"Window > Save Screenshot", L"Screenshot export is not implemented yet.");
         break;
       case kMenuHelpManual:
-        ShellExecuteW(hwnd_, L"open", L"https://docs.blender.org/manual/en/latest/", nullptr, nullptr, SW_SHOWNORMAL);
+        ShellExecuteW(hwnd_, L"open", L"https://github.com/octopus7/win64darkui", nullptr, nullptr, SW_SHOWNORMAL);
         break;
       case kMenuHelpAbout:
         OpenSplash();
@@ -1199,7 +1199,7 @@ class AppWindow {
         case SplashAction::Manual:
           ShellExecuteW(hwnd_,
                         L"open",
-                        L"https://docs.blender.org/manual/en/latest/",
+                        L"https://github.com/octopus7/win64darkui",
                         nullptr,
                         nullptr,
                         SW_SHOWNORMAL);
@@ -1845,7 +1845,7 @@ class AppWindow {
                     hovered_splash_action_ == SplashAction::Manual ? with_alpha(kTheme.hover, 0.92f) :
                                                                      with_alpha(kTheme.hover, 0.62f),
                     10.0f * scale_);
-    DrawTextLine(L"Online Manual",
+    DrawTextLine(L"Visit GitHub",
                  layout.manual_button,
                  small_bold_format_.Get(),
                  kTheme.text,
